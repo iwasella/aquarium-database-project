@@ -257,6 +257,7 @@ def delete_inventory(ingredient_id):
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("DELETE FROM Inventory WHERE Ingredient_ID=?", (ingredient_id,))
+    cur.execute("DELETE FROM Uses WHERE Ingredient_ID=?", (ingredient_id))
     conn.commit()
     conn.close()
 
