@@ -68,6 +68,11 @@ def menu_options():
     print("2. Add Menu Item")
     print("3. Delete Menu Item")
     print("4. Update Menu Item")
+    
+    print("5. View Menu Item Ingredients")
+    print("6. Add Menu Item Ingredient")
+    print("7. Delete Menu Item Ingredient")
+    
     return input("Choose an option: ")
 
 def do_menu_operation(choice):
@@ -92,6 +97,19 @@ def do_menu_operation(choice):
             price = float(input("Price: "))
             update_menu_item(id, name, category, price)
             print("Menu Item updated!")
+        case "5":
+            for row in read_menu_item_ingredients():
+                print(row)
+        case "6":
+            menu_id = input("Item ID: ")
+            ingredient_id = input("Ingredient ID: ")
+            add_menu_item_ingredient(menu_id, ingredient_id)
+            print("Menu Item Ingredient added!")
+        case "7":
+            menu_id = input("Item ID: ")
+            ingredient_id = input("Ingredient ID: ")
+            delete_menu_item_ingredient(menu_id, ingredient_id)
+            print("Menu Item Ingredient deleted!")
         case _:
             return False
     return True

@@ -178,6 +178,42 @@ def delete_menu_item(menu_id):
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("DELETE FROM Menu_Item WHERE MenuItem_ID=?", (menu_id,))
+    cur.execute("DELETE FROM Uses WHERE MenuItem_ID=?", (menu_id))
+    conn.commit()
+    conn.close()
+    
+    
+def read_menu_item_ingredients():
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT Uses.MenuItem_ID, Menu_Item.Name, Uses.Ingredient_ID, Inventory.Ingredient_name
+        FROM Uses
+        INNER JOIN Menu_Item
+        ON Uses.MenuItem_ID = Menu_Item.MenuItem_ID
+        INNER JOIN Inventory
+        ON Uses.Ingredient_ID = Inventory.Ingredient_ID
+    """)
+    rows = cur.fetchall()
+    conn.close()
+    return rows
+    
+    
+def add_menu_item_ingredient(menu_id, ingredient_id):
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("""
+        INSERT INTO Uses (MenuItem_ID, Ingredient_ID)
+        VALUES (?, ?)
+    """, (menu_id, ingredient_id))
+    conn.commit()
+    conn.close()
+   
+    
+def delete_menu_item_ingredient(menu_id, ingredient_id):
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("DELETE FROM Uses WHERE MenuItem_ID=? AND Ingredient_ID=?", (menu_id, ingredient_id))
     conn.commit()
     conn.close()
 

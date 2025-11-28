@@ -25,3 +25,11 @@ INSERT INTO Inventory (Ingredient_name, Ingredient_quantity, Ingredient_status, 
 -- Reservations
 INSERT INTO Reservation_Queue (Customer_ID, Reserv_time, Reserv_size, Reserv_status) VALUES
 (1, '2025-12-01 18:00', 2, 'Pending');
+
+-- Uses
+INSERT INTO Uses (MenuItem_ID, Ingredient_ID) VALUES
+(2, 2),
+(1, 1),
+(1, 3),
+(3, 1),
+(3, 3);
