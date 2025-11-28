@@ -164,29 +164,29 @@ def do_employee_operation(choice):
     
 while True:
     main_option = main_options()
-    success = True
+    valid = True
     
     match main_option:
         case "1":
             choice = customer_options()
-            success = do_customer_operation(choice)
+            valid = do_customer_operation(choice)
         case "2":
             choice = reservation_options()
-            success = do_reservation_operation(choice)
+            valid = do_reservation_operation(choice)
         case "3":
             choice = menu_options()
-            success = do_menu_operation(choice)
+            valid = do_menu_operation(choice)
         case "4":
             choice = inventory_options()
-            success = do_inventory_operation(choice)
+            valid = do_inventory_operation(choice)
         case "5":
             choice = employee_options()
-            success = do_employee_operation(choice)
+            valid = do_employee_operation(choice)
         case "6":
             print("Goodbye!")
             break
         case _:
-            success = False
+            valid = False
             
-    if not success:
+    if not valid:
         print("Invalid choice. Try again.")
