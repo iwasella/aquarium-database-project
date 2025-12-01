@@ -7,7 +7,8 @@ def main_options():
     print("3. Menu")
     print("4. Inventory")
     print("5. Employees")
-    print("6. Exit")
+    print("6. Order")
+    print("7. Exit")
     return input("Choose an option: ")
 
 def customer_options():
@@ -161,7 +162,32 @@ def do_employee_operation(choice):
         case _:
             return False
     return True
-    
+
+def order_options():
+    print("1. Get All Orders")
+    print("2. Add Order")
+    print("3. Cancel Order")
+    print("4. View Receipt")
+    print("5. Update Order Status")
+    return input("Choose an option: ")
+
+def do_order_operation(choice):
+    match choice:
+        case "1":
+            get_orders()
+        case "2":
+            add_order()
+        case "3":
+            cancel_order()
+        case "4":
+            receipt()
+        case "5":
+            update_order_status()
+        case _: 
+            return False
+    return True
+
+
 while True:
     main_option = main_options()
     valid = True
@@ -183,6 +209,9 @@ while True:
             choice = employee_options()
             valid = do_employee_operation(choice)
         case "6":
+            choice = order_options()
+            valid = do_order_operation(choice)
+        case "7":
             print("Goodbye!")
             break
         case _:

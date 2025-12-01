@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS Reservation_Queue (
 
 CREATE TABLE IF NOT EXISTS Employee (
     Employee_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT NOT NULL,
     Salary REAL NOT NULL,
     Employment_Type TEXT NOT NULL,
     Job_Title TEXT NOT NULL
