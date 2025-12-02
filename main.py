@@ -135,9 +135,17 @@ def do_inventory_operation(choice):
             create_inventory_item(name, qty, status, supplier)
             print("Inventory item added!")
         case "3":
-            print("Not implemented.")
+            ingredient_id = input("Ingredient ID: ")
+            delete_inventory(ingredient_id)
+            print("Inventory item deleted!") 
         case "4":
-            print("Not implemented.")
+            ingredient_id = input("Ingredient ID: ") 
+            name = input("Name: ") 
+            qty = input("Quantity: ")
+            status = input("Status: ") 
+            supplier = input("Supplier: ") 
+            update_inventory(ingredient_id, name, qty, status, supplier) 
+            print("Inventory Updated!") 
         case _:
             return False
     return True
@@ -152,13 +160,25 @@ def employee_options():
 def do_employee_operation(choice):
     match choice:
         case "1":
-            print("Not implemented.")
+            for row in read_employees():
+                print(row) 
         case "2":
-            print("Not implemented.")
+            salary = float(input("Salary: ")) 
+            employment_type = input("Employment Type: ")
+            job_title = input("Job Title: ")
+            create_employee(salary, employment_type, job_title) 
+            print("Employee Added!") 
         case "3":
-            print("Not implemented.")
+            employee_id = input("Employee ID: ")
+            delete_employee(employee_id) 
+            print("Employee Deleted!")
         case "4":
-            print("Not implemented.")
+            employee_id = input("Employee ID: ")
+            salary = float(input("Salary: "))
+            employment_type  = input("Employment Type: ")
+            job_title = input("Job Title: ")
+            update_employee(employee_id, salary, employment_type, job_title)
+            print("Employee Updated: ")
         case _:
             return False
     return True
