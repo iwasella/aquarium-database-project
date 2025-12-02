@@ -99,13 +99,13 @@ def delete_reservation(reser_id):
 # ---------------------------
 # EMPLOYEE CRUD
 # ---------------------------
-def create_employee(salary, employment_type, job_title):
+def create_employee(name, salary, employment_type, job_title):
     conn = get_connection()
     cur = conn.cursor()
     cur.execute("""
-        INSERT INTO Employee (Salary, Employment_Type, Job_Title)
-        VALUES (?, ?, ?)
-    """, (salary, employment_type, job_title))
+        INSERT INTO Employee (Name, Salary, Employment_Type, Job_Title)
+        VALUES (?, ?, ?, ?)
+    """, (name, salary, employment_type, job_title))
     conn.commit()
     conn.close()
 
@@ -124,7 +124,7 @@ def update_employee(employee_id, salary, employment_type, job_title):
     cur = conn.cursor()
     cur.execute("""
         UPDATE Employee
-        SET Salary=?, Employment_Type=?, Job_Title=?
+        SET Salary=?, Employment_Type=?, Job_Title=? 
         WHERE Employee_ID=?
     """, (salary, employment_type, job_title, employee_id))
     conn.commit()
@@ -134,7 +134,7 @@ def update_employee(employee_id, salary, employment_type, job_title):
 def delete_employee(employee_id):
     conn = get_connection()
     cur = conn.cursor()
-    cur.execute("DELETE FROM Employee WHERE Employee_ID=?", (employee_id,))
+    cur.execute("DELETE FROM Employee WHERE Employee_ID=?", (employee_id))
     conn.commit()
     conn.close()
 

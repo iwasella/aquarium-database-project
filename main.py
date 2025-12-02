@@ -163,21 +163,22 @@ def do_employee_operation(choice):
             for row in read_employees():
                 print(row) 
         case "2":
+            name = input("Name: ")
             salary = float(input("Salary: ")) 
             employment_type = input("Employment Type: ")
             job_title = input("Job Title: ")
-            create_employee(salary, employment_type, job_title) 
+            create_employee(name, salary, employment_type, job_title) 
             print("Employee Added!") 
         case "3":
             employee_id = input("Employee ID: ")
-            delete_employee(employee_id) 
+            delete_employee(name, employee_id) 
             print("Employee Deleted!")
         case "4":
             employee_id = input("Employee ID: ")
             salary = float(input("Salary: "))
             employment_type  = input("Employment Type: ")
             job_title = input("Job Title: ")
-            update_employee(employee_id, salary, employment_type, job_title)
+            update_employee(name, employee_id, salary, employment_type, job_title)
             print("Employee Updated: ")
         case _:
             return False
