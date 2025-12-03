@@ -1,6 +1,8 @@
 # aquarium-database-project
+This is a Python-based Command Line Interface (CLI) application designed to manage a restaurant database. The project uses SQLite, a lightweight, serverless, embedded database, accessed via Python's built-in sqlite3 library.
 
-To get started:
+Setup and Installation
+1. Create and Activate Virtual Environment (Recommended)
 It is recommended to work from a python venv (virtual environment). Follow these instructions to set up & activate your venv: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
 
 Python comes with the sqlite3 library. SQLite is a lightweight, embedded database and does not need to be run from a separate process.
@@ -19,14 +21,18 @@ SQLite is an embedded database — meaning:
 - Python includes SQLite support through the built-in sqlite3 module
 
 
-Run the installer:
+2. Run the Installer (Initialize Database)
 python3 run_first.py
 
-Run the Program
+To interact with the main CLI application:
 python3 main.py
 
-
 All database operations are located in crud.py.
+
+
+Running Test Queries
+python3 run_test_queries.py
+
 
 If something breaks or you want a clean slate:
 rm restaurant.db
@@ -37,3 +43,5 @@ Technologies Used
 Python (CLI interface, SQLite operations)
 SQLite3 (lightweight database)
 SQL (schema, seed data, queries
+
+
