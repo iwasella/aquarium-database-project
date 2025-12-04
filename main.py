@@ -30,9 +30,16 @@ def do_customer_operation(choice):
             create_customer(name, email, phone)
             print("Customer added!")
         case "3":
-            print("Not implemented.")
+            customer_id = input("Customer ID: ")
+            delete_customer(customer_id)
+            print("Customer deleted!")
         case "4":
-            print("Not implemented.")
+            customer_id = input("Customer ID: ")
+            name = input("Name: ")
+            email = input("Email: ")
+            phone = input("Phone: ")
+            update_customer(customer_id, name, email, phone)
+            print("Customer Updated!")
         case _:
             return False
     return True
@@ -66,11 +73,11 @@ def do_reservation_operation(choice):
         case "4":
             try:
                 reser_id = int(input("Enter Reservation ID to update: "))
-                # Note: Customer_ID is NOT updated, matching your crud.py function signature
+
                 time = input("New Reservation Time: ")
                 size = int(input("New Party Size: "))
                 status = input("New Status: ")
-                # Calling the 4-argument function from crud.py
+                
                 update_reservation(reser_id, time, size, status) 
                 print(f"🔄 Reservation ID {reser_id} updated!")
             except ValueError:
