@@ -41,11 +41,13 @@ All database operations are located in crud.py.
 rm restaurant.db
 python3 run_first.py
 
+**IMPORTANT: To prevent frequent crashing, please be aware that a lot of inputs are case-sensitive so when provided how input, type exactly as it is.**  
 
 Technologies Used
 Python (CLI interface, SQLite operations)
 SQLite3 (lightweight database)
 SQL (schema, seed data, queries
+
 
 
 
