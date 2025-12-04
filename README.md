@@ -1,4 +1,10 @@
 # aquarium-database-project
+
+
+
+https://github.com/user-attachments/assets/7f8b6a73-7bda-43cd-a939-48fa479d34db
+
+
 This is a Python-based Command Line Interface (CLI) application designed to manage a restaurant database. The project uses SQLite, a lightweight, serverless, embedded database, accessed via Python's built-in sqlite3 library.
 
 Setup and Installation
@@ -47,6 +53,7 @@ Technologies Used
 Python (CLI interface, SQLite operations)
 SQLite3 (lightweight database)
 SQL (schema, seed data, queries
+
 
 
 
