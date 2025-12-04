@@ -24,20 +24,20 @@ SQLite is an embedded database — meaning:
 2. Run the Installer (Initialize Database)
 python3 run_first.py
 
-Running Test Queries
-python3 run_test_queries.py  
 
 **NOTE: Recommended to run test queries first before using the CLI.**  
+3. Run Test Queries
+python3 run_test_queries.py  
 
 After running test queries :  
 Remove restaurant.db, generate it back, and then go forward to the CLI (better to start CLI with a clean slate).  
 
-To interact with the main CLI application:
+4. To interact with the main CLI application
 python3 main.py
 
 All database operations are located in crud.py.
 
-If something breaks or you want a clean slate:
+**If something breaks or you want a clean slate**
 rm restaurant.db
 python3 run_first.py
 
