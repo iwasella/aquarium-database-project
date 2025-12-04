@@ -55,11 +55,26 @@ def do_reservation_operation(choice):
             size = int(input("Party Size: "))
             status = input("Status: ")
             create_reservation(cid, time, size, status)
-            print("Reservation added!")
+            print("✅ Reservation added!")
         case "3":
-            print("Not implemented.")
+            try:
+                reser_id = int(input("Enter Reservation ID to delete: "))
+                delete_reservation(reser_id)
+                print(f"🗑️ Reservation ID {reser_id} deleted!")
+            except ValueError:
+                print("❌ Invalid input for Reservation ID.")
         case "4":
-            print("Not implemented.")
+            try:
+                reser_id = int(input("Enter Reservation ID to update: "))
+                # Note: Customer_ID is NOT updated, matching your crud.py function signature
+                time = input("New Reservation Time: ")
+                size = int(input("New Party Size: "))
+                status = input("New Status: ")
+                # Calling the 4-argument function from crud.py
+                update_reservation(reser_id, time, size, status) 
+                print(f"🔄 Reservation ID {reser_id} updated!")
+            except ValueError:
+                print("❌ Invalid input for Reservation ID or Party Size.")
         case _:
             return False
     return True
