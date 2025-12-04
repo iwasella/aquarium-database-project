@@ -1,2 +1,4 @@
 .venv
 tutorial.db
+restaurant.db
+__pycache__
