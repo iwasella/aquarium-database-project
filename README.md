@@ -27,7 +27,8 @@ python3 run_first.py
 Running Test Queries
 python3 run_test_queries.py  
 
-**NOTE** Recommended to run test queries first before using the CLI.  
+**NOTE: Recommended to run test queries first before using the CLI.**  
+
 After running test queries :  
 Remove restaurant.db, generate it back, and then go forward to the CLI (better to start CLI with a clean slate).  
 
@@ -45,6 +46,7 @@ Technologies Used
 Python (CLI interface, SQLite operations)
 SQLite3 (lightweight database)
 SQL (schema, seed data, queries
+
 
 
 
